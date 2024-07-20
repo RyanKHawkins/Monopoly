@@ -12,3 +12,4 @@ Monopoly Clone
 ### What I've learned so far
 
 
+This will definitely be a growth project for me, as there will be many aspects to deal with.
