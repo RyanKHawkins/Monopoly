@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+}
+
+#board {
+    border: 1px solid;
+    width: 500px;
+    height: 500px;
+}
+#control-panel {
+    border: 1px solid;
+    width: 500px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#control-panel > div {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px
+}
+#player-dashboard {
+    border: 1px solid;
+    height: 600px;
+    width: 400px;
+}
+.board-squares {
+
+}
+.property-cards {
+
+}
+.property-groups {
+    width: 10px;
+    height: 5px;
+    border: 1px solid;
+}
+button {
+    width: 100px;
+    height: 25px;
+}
