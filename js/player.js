@@ -1,13 +1,14 @@
 import * as Property from "../js/property.js"
+import { currentPlayer } from "./monopoly.js";
 
 export class Player {
-    constructor (name, type) {
+    constructor (name, isHuman = true) {
         this.name = name;
         this.bank = 1500;
         this.properties = [];
         this.utilities = [];
         this.railroads = [];
-        this.isHuman = true;
+        this.isHuman = isHuman;
         this.isJailed = false;
     }
     rollDice() {
