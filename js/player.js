@@ -19,8 +19,14 @@ export class Player {
         console.log(`${this.name} rolled ${diceRolled[0]} and ${diceRolled[1]} equaling ${total}`);
         return [...diceRolled]
     }
-    buyProperty() {
+    buyProperty(propertyName) {
+        let property = Property.allProperties.find(p => p.name == propertyName);
+        
+        console.log("property: ", property);
         console.log(`${this.name} bought property`)
     }
-    endTurn() {}
+    ownsGroup(group) {
+        let groupProperties = Property.groups.find(g => g.name == group).properties;
+        return groupProperties.every(property => property.owner == currentPlayer.name)
+    }
 }
