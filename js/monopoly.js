@@ -66,14 +66,51 @@ function switchPlayer() {
 function endTurn() {
     switchPlayer();
     rollCount = 0;
+    updateDashboard();
 }
 
 
+function updateDashboard() {
+    playerDashboard.innerHTML = `<h3>Player:  ${currentPlayer.name}</h3>`;
+    if (currentPlayer.isJailed) {
+        playerDashboard.innerHTML += "<p>in jail</p>"
+    }
+    Property.groups.forEach(group => {
+        let groupDiv = document.createElement("div");
+        groupDiv.classList = "group-divs"
 
-Property.groups.forEach(group => {
-    let div = document.createElement("div");
-    div.classList.add(".property-groups")
-    div.style.backgroundColor = group.color;
-    playerDashboard.append(div);
-    console.log(playerDashboard)
-})
+        groupDiv.innerHTML += `<p style="background-color: ${group.color || "lightgray"}" class="group-headers">${group.name}</p>`
+
+
+        let list = document.createElement("ul");
+        for (let property of group.properties) {
+            if (property.owner == currentPlayer.name) {
+                let listItem = document.createElement("li");
+                listItem.innerText = property.displayName
+                list.append(listItem)
+                groupDiv.append(list)
+            }
+        }
+        playerDashboard.append(groupDiv);
+    })    
+}
+updateDashboard()
+
+
+
+function displayMessage(message) {
+
+}
+
+function moveSpaces(count) {
+
+}
+
+
+currentPlayer.ownsGroup("Brown")
+console.log(Property.isMonopoly(Property.allProperties[0].group) && currentPlayer.ownsGroup(Property.allProperties[0].group))
+
+console.log(Property.isMonopoly("Brown"))
+console.log(Property.isInMonopoly("baltic_ave"));
+
+currentPlayer.buyProperty(Property.allProperties[2].name)
