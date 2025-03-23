@@ -21,7 +21,17 @@ rollButton.addEventListener("click", () => {
     endTurnButton.disabled = false;
     if (dice[0] == dice[1]) {
         rollCount++;
+        currentPlayer.isJailed = false;
+        if (currentPlayer.isJailed) {
+            currentPlayer.isJailed = false
+        }
+        if (rollCount >= 3) {
+            currentPlayer.isJailed = true;
+        }
     } else {
+        if (!currentPlayer.isJailed) {
+
+        }
         rollButton.disabled = true;
     }
 })
