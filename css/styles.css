@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 body {
@@ -29,7 +31,7 @@ body {
 #player-dashboard {
     border: 1px solid;
     height: 600px;
-    width: 400px;
+    width: 300px;
 }
 .board-squares {
 
@@ -37,12 +39,16 @@ body {
 .property-cards {
 
 }
-.property-groups {
-    width: 10px;
-    height: 5px;
-    border: 1px solid;
-}
+
 button {
     width: 100px;
     height: 25px;
+}
+.group-divs {
+    border: 1px solid;
+}
+.group-headers {
+}
+li {
+    margin-left: 25px;
 }
