@@ -35,6 +35,7 @@ rollButton.addEventListener("click", () => {
         rollButton.disabled = true;
     }
 })
+
 endTurnButton.addEventListener("click", () => {
     endTurnButton.disabled = true;
     rollButton.disabled = false;
@@ -44,17 +45,14 @@ endTurnButton.addEventListener("click", () => {
 
 
 
-let players = [new Computer("computer")];
+let players = [new Computer("computer", false)];
 // let player = new Player(window.prompt("What's your name?".trim()))
 let player = new Player("Ryan")
 let rollCount = 0;
 
 players.unshift(player)
-console.log(players)
 
-player.buyProperty()
-
-let currentPlayer = players[0];
+export let currentPlayer = players[0];
 
 function switchPlayer() {
     let index = players.indexOf(currentPlayer);
