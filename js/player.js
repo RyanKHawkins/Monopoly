@@ -30,4 +30,8 @@ export class Player {
         let groupProperties = Property.groups.find(g => g.name == group).properties;
         return groupProperties.every(property => property.owner == currentPlayer.name)
     }
+    payFine() {
+        this.bank -= 50;
+        this.isJailed = false;
+    }
 }
