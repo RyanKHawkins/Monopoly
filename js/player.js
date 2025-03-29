@@ -1,4 +1,5 @@
 import * as Property from "../js/property.js"
+import * as Board from "./board.js"
 import { currentPlayer } from "./monopoly.js";
 
 export class Player {
@@ -21,10 +22,15 @@ export class Player {
         console.log(`${this.name} rolled ${diceRolled[0]} and ${diceRolled[1]} equaling ${total}`);
         return [...diceRolled]
     }
+    moveSpaces(count) {
+        this.index += count;
+        Board.enterSquare(this.index)
+    }
     buyProperty(propertyName) {
         let property = Property.allProperties.find(p => p.name == propertyName);
         
-        console.log("property: ", property);
+        property.owner = currentPlayer.name;
+        currentPlayer.owned.push(property);
         console.log(`${this.name} bought property`)
     }
     ownsGroup(group) {
