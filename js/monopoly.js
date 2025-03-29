@@ -1,7 +1,8 @@
 /*-- Imports --*/
-import {Player} from "../js/player.js"
-import {Computer} from "../js/computer.js"
-import * as Property from "../js/property.js"
+import {Player} from "./player.js"
+import {Computer} from "./computer.js"
+import * as Property from "./property.js"
+import * as Card from "./cards.js"
 
 /*-- Constants --*/
 const playerDashboard = document.querySelector("#player-dashboard")
