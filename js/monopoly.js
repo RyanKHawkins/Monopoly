@@ -3,9 +3,11 @@ import {Player} from "./player.js"
 import {Computer} from "./computer.js"
 import * as Property from "./property.js"
 import * as Card from "./cards.js"
+import * as Helper from "./helper.js"
 
 /*-- Constants --*/
 const playerDashboard = document.querySelector("#player-dashboard")
+const messageDisplay = document.querySelector("#message-display")
 const buttons = Array.from(document.querySelectorAll("button"));
 const rollButton = document.querySelector("#roll-button");
 const endTurnButton = document.querySelector("#end-turn-button")
@@ -97,11 +99,6 @@ function updateDashboard() {
 }
 updateDashboard()
 
-
-
-function displayMessage(message) {
-
-}
 
 function moveSpaces(count) {
 
