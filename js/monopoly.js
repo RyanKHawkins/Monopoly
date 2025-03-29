@@ -78,7 +78,9 @@ function updateDashboard() {
         let groupDiv = document.createElement("div");
         groupDiv.classList = "group-divs"
 
-        groupDiv.innerHTML += `<p style="background-color: ${group.color || "lightgray"}" class="group-headers">${group.name}</p>`
+        groupDiv.innerHTML += `<p style="background-color: ${group.color || "lightgray"}" class="group-headers">
+            ${group.name}
+            </p>`
 
 
         let list = document.createElement("ul");
