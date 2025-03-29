@@ -4,9 +4,13 @@ class Property {
         this.name = name;
         this.displayName = displayName;
         this.group = group;
-        this.owner = owner || null;
-        this.isOwned = owner ? true : false
-        allProperties.push(this)
+        this.purchasePrice = purchasePrice;
+        this.owner = "";
+        this.isOwned = this.owner ? true : false;
+        this.rentStructure = rentStructure;
+        this.houseCount = 0;
+        this.hotelCount = 0;
+        allProperties.push(this);
     }
 }
 
