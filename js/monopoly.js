@@ -113,3 +113,8 @@ console.log(Property.isMonopoly("Brown"))
 console.log(Property.isInMonopoly("baltic_ave"));
 
 currentPlayer.buyProperty(Property.allProperties[2].name)
+currentPlayer.moveSpaces(1)
+
+console.log(Property.isMonopoly("Purple"))
+currentPlayer.buyProperty("mediterranean_ave")
+console.log(Property.groups[0].properties)
