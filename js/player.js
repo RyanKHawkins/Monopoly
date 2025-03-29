@@ -5,7 +5,8 @@ export class Player {
     constructor (name, isHuman = true) {
         this.name = name;
         this.bank = 1500;
-        this.properties = [];
+        this.index = 0;
+        this.owned = [];
         this.utilities = [];
         this.railroads = [];
         this.isHuman = isHuman;
