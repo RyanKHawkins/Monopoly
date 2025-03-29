@@ -1,6 +1,6 @@
 
 class Property {
-    constructor(name, displayName, group, owner) {
+    constructor(name, displayName, group, purchasePrice, mortgagePrice, rentStructure) {
         this.name = name;
         this.displayName = displayName;
         this.group = group;
