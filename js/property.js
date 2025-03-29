@@ -83,7 +83,8 @@ function findGroupByProperty(property) {
 
 export function isMonopoly(group) {
     let groupProperties = groups.find(g => g.name == group).properties;
-    return groupProperties.every(property => property.owner == groupProperties[0].owner)
+    console.log("groupProperties:  ", groupProperties.map(p => p = p.owner))
+    return groupProperties.every(property => property.owner == groupProperties[0].owner && property.owner)
 }
 
 export function isInMonopoly(property) {
