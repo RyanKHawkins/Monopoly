@@ -12,6 +12,33 @@ const buttons = Array.from(document.querySelectorAll("button"));
 const rollButton = document.querySelector("#roll-button");
 const endTurnButton = document.querySelector("#end-turn-button")
 
+/*-- Initiating Variables --*/
+
+export let players = []
+// let player = new Player(window.prompt("What's your name?".trim()))
+let rollCount;
+let numOfPlayers;
+export let currentPlayer
+
+function newGame() {
+    rollCount = 0;
+    players = [new Player("Ryan"), new Computer("Computer", false)];
+
+    // numOfPlayers = Number(window.prompt("How many human players?").trim())
+    // for (let i = 0; i < numOfPlayers; i++) {
+    //     let player = window.prompt("Player name?").trim();
+    //     players.unshift(new Player(player));
+    //     console.log("players:  ", players);
+    // }
+
+    currentPlayer = players[0];
+    for (let property of Property.allProperties.map(p => p.name)) {
+        players[0].buyProperty(property);
+    }
+    updateDashboard();
+    processTurn(currentPlayer);
+}
+newGame()
 /*-- Event Listeners --*/
 buttons.forEach(button => {
     button.addEventListener("click", (e) => {
