@@ -130,7 +130,6 @@ function updateDashboard() {
         playerDashboard.append(groupDiv);
     })    
 }
-updateDashboard()
 
 
 function moveSpaces(count) {
