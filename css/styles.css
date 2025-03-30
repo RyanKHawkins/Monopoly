@@ -28,6 +28,10 @@ body {
     flex-direction: row;
     gap: 10px
 }
+
+#message-display {
+    height: 50px;
+}
 #player-dashboard {
     border: 1px solid;
     height: 600px;
