@@ -47,8 +47,10 @@ buttons.forEach(button => {
 })
 
 rollButton.addEventListener("click", () => {
+    console.log("currentPlayer:  ", currentPlayer)
     let dice = currentPlayer.rollDice();
     endTurnButton.disabled = false;
+    Helper.displayMessage(`Rolled a ${dice.join(" and a ")}`)
     if (dice[0] == dice[1]) {
         rollCount++;
         currentPlayer.isJailed = false;
@@ -57,6 +59,7 @@ rollButton.addEventListener("click", () => {
         }
         if (rollCount >= 3) {
             currentPlayer.isJailed = true;
+            Helper.displayMessage("Rolled 3 doubles in a row.", "Go to jail!")
         }
     } else {
         if (!currentPlayer.isJailed) {
@@ -73,22 +76,25 @@ endTurnButton.addEventListener("click", () => {
 }
 )
 
+function processTurn(player) {
+    console.log("Processed turn");
+    if (player.isJailed) {
 
+    }
+    return
+}
 
-let players = [new Computer("computer", false)];
-// let player = new Player(window.prompt("What's your name?".trim()))
-let player = new Player("Ryan")
-let rollCount = 0;
-
-players.unshift(player)
-
-export let currentPlayer = players[0];
+function evaluateDice(dice) {
+    console.log(dice);
+    return
+}
 
 function switchPlayer() {
     let index = players.indexOf(currentPlayer);
     let newIndex = index + 1
     currentPlayer = players[newIndex % players.length];
-    console.log(`Current player is ${currentPlayer.name}.`);
+    Helper.displayMessage();
+    processTurn(currentPlayer);
 }
 
 function endTurn() {
