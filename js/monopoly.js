@@ -5,7 +5,7 @@ import * as Property from "./property.js"
 import * as Card from "./cards.js"
 import * as Helper from "./helper.js"
 
-/*-- Constants --*/
+/*-- DOM --*/
 const playerDashboard = document.querySelector("#player-dashboard")
 const messageDisplay = document.querySelector("#message-display")
 const buttons = Array.from(document.querySelectorAll("button"));
