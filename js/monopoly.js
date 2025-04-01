@@ -4,6 +4,7 @@ import {Computer} from "./computer.js"
 import * as Property from "./property.js"
 import * as Card from "./cards.js"
 import * as Helper from "./helper.js"
+import { openModule, closeModule } from "./property_module.js"
 
 /*-- DOM --*/
 const playerDashboard = document.querySelector("#player-dashboard")
@@ -122,6 +123,9 @@ function updateDashboard() {
         for (let property of group.properties) {
             if (property.owner == currentPlayer.name) {
                 let listItem = document.createElement("li");
+                listItem.addEventListener("click", (e) => {
+                    openModule(e.target);
+                })
                 listItem.innerText = property.displayName
                 list.append(listItem)
                 groupDiv.append(list)
