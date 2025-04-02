@@ -9,5 +9,11 @@ export function displayMessage(...messages) {
         messageDisplay.innerHTML += `<p>${message}</p>`;
     }
 
-    // messageDisplay.textContent = message;
+}
+
+export function formatCurrency(amount) {
+    return new Intl.NumberFormat("en-us", {
+        style: "currency",
+        currency: "USD"
+    }).format(amount)
 }
