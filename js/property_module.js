@@ -8,16 +8,14 @@ export function openModule(property) {
 
     console.log(module)
 
+    // Header
     let propertyObj = Property.getPropertyObject(property.innerText);
     let groupColor = propertyObj.group.toLowerCase() || black;
 
-    console.log(propertyObj)
-    console.log(groupColor)
     let header = document.createElement("p");
     header.style.backgroundColor = groupColor;
     header.classList = "module-headers";
-    // header.onclick = closeModule;
-    
+
     let span = document.createElement("span");
     span.id = "close-button"
     span.innerText = "X";
@@ -26,14 +24,27 @@ export function openModule(property) {
 
     module.append(header);
 
+
     let card = document.createElement("div");
     card.classList = "property-displays"
 
     card.innerHTML += `<p class="property-titles">${propertyObj.displayName}</p>`
 
+    console.log(propertyObj.type)
+    if (propertyObj.type == "rental") {
+        let rentDiv = document.createElement("div");
+        rentDiv.id = "rent-div"
+        for (let [num, cost] of Object.entries(propertyObj.rentStructure)) {
+            console.log(num, cost)
+            let p = document.createElement("p");
+            p.innerText = `${num}:  ${cost}`
+            rentDiv.append(p)
+        }
+        card.append(rentDiv);
+    }
+
     module.append(card)
 
-    // setTimeout(closeModule, 1000);
 }
 
 export function setModule(property) {
