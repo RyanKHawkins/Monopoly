@@ -1,4 +1,5 @@
 import * as Property from "./property.js"
+import * as Helper from "./helper.js"
 const module = document.querySelector("#module")
 
 
@@ -37,10 +38,12 @@ export function openModule(property) {
         for (let [num, cost] of Object.entries(propertyObj.rentStructure)) {
             console.log(num, cost)
             let p = document.createElement("p");
-            p.innerText = `${num}:  ${cost}`
+            p.innerText = `${num}:  ${Helper.formatCurrency(cost)}`
             rentDiv.append(p)
         }
         card.append(rentDiv);
+        card.innerHTML += `<p>Purcase:  ${Helper.formatCurrency(propertyObj.purchasePrice)}</p>`;
+        card.innerHTML += `<p>Mortgage:  ${Helper.formatCurrency(propertyObj.mortgagePrice)}</p>`
     }
 
     module.append(card)
