@@ -148,10 +148,6 @@ function updateDashboard() {
 }
 
 
-function moveSpaces(count) {
-
-}
-
 
 // currentPlayer.ownsGroup("Brown")
 // console.log(Property.isMonopoly(Property.allProperties[0].group) && currentPlayer.ownsGroup(Property.allProperties[0].group))
