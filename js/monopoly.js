@@ -18,19 +18,29 @@ const endTurnButton = document.querySelector("#end-turn-button")
 export let players = []
 // let player = new Player(window.prompt("What's your name?".trim()))
 let rollCount;
-let numOfPlayers;
+let playerCount;
 export let currentPlayer
+
+function getPlayers() {
+    // Set total number of players
+    // let playerCount
+    // Give choice between number of humans and computers
+
+    // playerCount = Number(window.prompt("How many human players?").trim())
+    // for (let i = 0; i < playerCount; i++) {
+    //     let player = window.prompt("Player name?").trim();
+    //     players.unshift(new Player(player));
+    //     console.log("players:  ", players);
+    // }
+
+    return []
+}
 
 function newGame() {
     rollCount = 0;
     players = [new Player("Ryan"), new Computer("Computer", false)];
 
-    // numOfPlayers = Number(window.prompt("How many human players?").trim())
-    // for (let i = 0; i < numOfPlayers; i++) {
-    //     let player = window.prompt("Player name?").trim();
-    //     players.unshift(new Player(player));
-    //     console.log("players:  ", players);
-    // }
+    players.push(...getPlayers());
 
     currentPlayer = players[0];
     for (let property of Property.allProperties.map(p => p.name)) {
@@ -38,6 +48,8 @@ function newGame() {
     }
     updateDashboard();
     processTurn(currentPlayer);
+
+    console.log(players);
 }
 newGame()
 /*-- Event Listeners --*/
