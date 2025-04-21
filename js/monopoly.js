@@ -1,6 +1,6 @@
 /*-- Imports --*/
 import {Player} from "./player.js"
-import {Computer} from "./computer.js"
+import {Bot} from "./bot.js"
 import * as Property from "./property.js"
 import * as Card from "./cards.js"
 import * as Helper from "./helper.js"
@@ -26,7 +26,7 @@ let botCount = 0
 function getPlayers() {
     // Set total number of players
     // let playerCount
-    // Give choice between number of humans and computers
+    // Give choice between number of humans and bots
 
     let playerObjects = []
     playerNames = [];
@@ -41,7 +41,7 @@ function getPlayers() {
     }
     botCount = Number(window.prompt("How many bots to you want to play against?"));
     for (let i = 0; i < botCount; i++) {
-        playerObjects.push(new Computer(`Bot${i + 1}`))
+        playerObjects.push(new Bot(`Bot${i + 1}`))
     }
 
     return playerObjects
@@ -49,7 +49,7 @@ function getPlayers() {
 
 function newGame() {
     rollCount = 0;
-    players = [new Player("Ryan"), new Computer("Computer", false)];
+    players = [new Player("Ryan"), new Bot("Bot", false)];
 
     // * leave commented out for current testing
     // players.push(...getPlayers());
