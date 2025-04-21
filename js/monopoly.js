@@ -18,29 +18,41 @@ const endTurnButton = document.querySelector("#end-turn-button")
 export let players = []
 // let player = new Player(window.prompt("What's your name?".trim()))
 let rollCount;
-let playerCount;
+let playerCount = 0;
+let playerNames;
 export let currentPlayer
+let botCount = 0
 
 function getPlayers() {
     // Set total number of players
     // let playerCount
     // Give choice between number of humans and computers
 
-    // playerCount = Number(window.prompt("How many human players?").trim())
-    // for (let i = 0; i < playerCount; i++) {
-    //     let player = window.prompt("Player name?").trim();
-    //     players.unshift(new Player(player));
-    //     console.log("players:  ", players);
-    // }
+    let playerObjects = []
+    playerNames = [];
+    playerCount = Number(window.prompt("How many human players?").trim())
+    for (let i = 0; i < playerCount; i++) {
+        let player = window.prompt("Player name?").trim();
+        if (playerNames.includes(player.toLowerCase())) {
+        }
+        playerObjects.push(player.toLowerCase());
+        players.unshift(new Player(player));      
+        console.log("players:  ", players);
+    }
+    botCount = Number(window.prompt("How many bots to you want to play against?"));
+    for (let i = 0; i < botCount; i++) {
+        playerObjects.push(new Computer(`Bot${i + 1}`))
+    }
 
-    return []
+    return playerObjects
 }
 
 function newGame() {
     rollCount = 0;
     players = [new Player("Ryan"), new Computer("Computer", false)];
 
-    players.push(...getPlayers());
+    // * leave commented out for current testing
+    // players.push(...getPlayers());
 
     currentPlayer = players[0];
     for (let property of Property.allProperties.map(p => p.name)) {
